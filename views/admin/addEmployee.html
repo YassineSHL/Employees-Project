@@ -1,0 +1,68 @@
+<script type="text/javascript">
+var form = document.forms[0],
+    submit = document.getElementById('submit'),
+    input = document.getElementById('firstName');
+
+input.addEventListener('invalid', function(e) {
+    if (input.validity.valueMissing) {
+        e.target.setCustomValidity("Please create a username");
+    } else if (!input.validity.valid) {
+        e.target.setCustomValidity("This is not a valid username");
+    }
+    // to avoid the 'sticky' invlaid problem when resuming typing after getting a custom invalid message
+    input.addEventListener('input', function(e) {
+        e.target.setCustomValidity('');
+    });
+}, false);
+</script>
+<div class="content center">
+    <!--TO DELETE IF NOT NEEDED-->
+    <div class="container small_mrgn">
+        <h1 class="page_title" ng-hide="editMode">Add New Employee</h1>
+        <h1 class="page_title" ng-show="editMode">Edit Employee</h1>
+        <form ng-submit="onSubmit(newEntry)" method="POST" class="center" ng-hide="signedup" name="newEntry">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{
+                'error': !newEntry.firstName.$valid && (!newEntry.$priristine || newEntry.$submitted) && newEntry.firstName.$touched,
+                'success': newEntry.firstName.$valid} ">
+                    <input type="text" class="form-control" name="firstName" placeholder="*First name" ng-model="employee.firstName" min="3" max="15" required oninvalid="this.setCustomValidity('Enter the first name here')" oninput="setCustomValidity('')">
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.lastName.$valid && !newEntry.$priristine && newEntry.lastName.$touched, 'success': newEntry.lastName.$valid} ">
+                    <input type="text" class="form-control" name="lastName" placeholder="*Last name" ng-model="employee.lastName" min="3" max="15" required oninvalid="this.setCustomValidity('Enter the last name here')" oninput="setCustomValidity('')">
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.email.$valid && !newEntry.$priristine && newEntry.email.$touched, 'success': newEntry.email.$valid} ">
+                    <input type="email" class="form-control" name="email" ng-disabled="editMode" placeholder="*E-mail" ng-model="employee.email" min="5" max="30" required oninvalid="this.setCustomValidity('Enter the email here')" oninput="setCustomValidity('')">
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.phoneNumber.$valid && !newEntry.$priristine && newEntry.phoneNumber.$touched, 'success': newEntry.phoneNumber.$valid} ">
+                    <input type="text" class="form-control" name="phoneNumber" placeholder="*Phone number (z.B: 0049111111111)" ng-model="employee.phoneNumber" ng-minlength="10" ng-maxlength="13" required>
+                    <div ng-messages="newEntry.phoneNumber.$error" role="alert" multiple>
+                        <div ng-message="minlength">The phone number entered is too short</div>
+                        <div ng-message="maxlength">The phone number entered is too long</div>
+                    </div>
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.address.$valid && !newEntry.$priristine && newEntry.address.$touched, 'success': newEntry.address.$valid} ">
+                    <input type="text" class="form-control" name="address" placeholder="*Address" ng-model="employee.address" min="10" max="40" required>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.city.$valid && !newEntry.$priristine && newEntry.city.$touched, 'success': newEntry.city.$valid} ">
+                    <input type="text" class="form-control" name="city" placeholder="*City" ng-model="employee.city" min="3" max="15" required>
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.insuranceNumber.$valid && !newEntry.$priristine && newEntry.insuranceNumber.$touched, 'success': newEntry.insuranceNumber.$valid} ">
+                    <input type="text" class="form-control" name="insuranceNumber" placeholder="*Insurance number" ng-model="employee.insuranceNumber" size="10" maxlength="10" required>
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.insuranceExpiryDate.$valid && !newEntry.$priristine && newEntry.insuranceExpiryDate.$touched, 'success': newEntry.insuranceExpiryDate.$valid} ">
+                    <input type="text" class="form-control" name="insuranceExpiryDate" placeholder="*Insurance expiry date: dd-mm-yyyy" ng-model="employee.insuranceExpiryDate" size="10" maxlength="10" required>
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.profession.$valid && !newEntry.$priristine && newEntry.profession.$touched, 'success': newEntry.profession.$valid} ">
+                    <input type="text" class="form-control" name="profession" placeholder="*Profession" ng-model="employee.profession" min="4" max="15" required>
+                </div>
+                <div class="input-group input-group-md fullwidth small_mrgn" ng-class="{'error': !newEntry.company.$valid && !newEntry.$priristine && newEntry.company.$touched, 'success': newEntry.company.$valid} ">
+                    <input type="text" class="form-control" name="company" placeholder="*Company" ng-model="employee.company" min="4" max="15" required>
+                </div>
+                <button ng-hide="editMode" type="submit" ng-disabled="newEntry.$invalid" class="btn btn-info btn-md pull-right small_mrgn">Add Employee</button>
+                <button ng-show="editMode" ng-click="saveNewEntry(employee, newEntry)" ng-disabled="newEntry.$invalid" id="submit" type="submit" class="btn btn-info btn-md pull-right">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>

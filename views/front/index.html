@@ -1,0 +1,112 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Employees Portal</title>
+    <base href="/Employees-Project/">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--library-->
+    <script src="js/library/underscore-min.js"></script>
+    <script src="js/library/angular.min.js"></script>
+    <script src="js/library/1.5.0_angular-route.js"></script>
+    <script src="js/library/1.5.0_angular-animate.js"></script>
+    <script src="js/library/1.0.0_angular-ui-router.min.js"></script>
+    <script src="js/library/angular-messages.min.js"></script>
+    <script src="js/library/1.12.0_jquery.min.js"></script>
+    <script src="js/library/ui-bootstrap-tpls-1.1.2.js"></script>
+    <script src="js/library/angular-modal-service.js"></script>
+    <!--APP LOAD-->
+    <script src="js/appFront.js"></script>
+    <!--SERVICES-->
+    <script src="js/services/localStorage.service.js"></script>
+    <!--CONTROLLERS-->
+    <script src="js/controllers/employees.controller.js"></script>
+</head>
+
+<body ng-controller="employeesCtrl" style="background-color: #E8EADD;">
+    <div class="container-fluid">
+        <!-- .navbar-fixed-top, or .navbar-fixed-bottom can be added to keep the nav bar fixed on the screen -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">New Website</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-class="{active: $state.includes('home')}"><a ui-sref="public.home" ui-sref-active="active" class="btn" role="button"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                        <li ng-class="{active: $state.includes('about')}"><a ui-sref="public.about" ui-sref-active="active" class="btn" role="button">About/FAQ</a></li>
+                        <li ng-class="{active: $state.includes('employeeFact')}"><a ui-sref="public.employeeFact" ui-sref-active="active" class="btn" role="button">Employees factory</a></li>
+                        <li ng-class="{active: $state.includes('login')}"><a ui-sref="public.addEmployee" ui-sref-active="active" class="btn" role="button">Add new employee</a></li>
+                        <li ng-class="{active: $state.includes('contact')}"><a ui-sref="public.contact" ui-sref-active="active" class="btn" role="button">Contact Us</a></li>
+                        <li ng-click="logout()"><a class="btn" role="button">Logout</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <ui-view>
+        <div>
+            <h1 class="center page_title">Home</h1>
+            <div class="container mrgn">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim neque faucibus blandit facilisis. Donec sed elit hendrerit, iaculis ex id, hendrerit ipsum. Duis sed maximus elit, a viverra sapien. Quisque sed arcu quam. Phasellus ac viverra eros. Pellentesque efficitur auctor condimentum. Fusce mattis, nulla vitae sodales lacinia, justo nulla gravida felis, quis luctus justo nisi ut ligula. Fusce commodo dolor non erat accumsan, nec egestas est commodo.
+                </p>
+            </div>
+        </div>
+    </ui-view>
+</body>
+<footer>
+    <div class="container_dark_grey footer">
+        <table>
+            <thead>
+                <tr>
+                    <td style="width: 40%" class="center">
+                        <div><a href="#">Contact Us</a></div>
+                        <div><a href="#">Search Stores</a></div>
+                        <div><a href="#">Q&#38;As</a></div>
+                        <div><a href="#">Help</a></div>
+                    </td>
+                    <td style="width: 20%" class="center">
+                        <a href="#">
+                            <h1 class="boxed_item">Lorem <span class="logo_bold">Ipsum</span></h1>
+                        </a>
+                    </td>
+                    <td style="width: 40%; padding-left: 10%;">
+                        <div>
+                            <a href="https://www.facebook.com/" class="footer_space"><img src="images/icons/Facebook20.png" title="Facebook"> : facebook.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="#" class="footer_space"><img src="images/icons/Twitter20.png" title="Twitter"> : twitter.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="https://www.facebook.com/" class="footer_space"><img src="images/icons/LinkedIn20.png" title="Facebook"> : LinkedIn.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="#" class="footer_space"><img src="images/icons/Mail20.png" title="Gmail"> : lorem.ipsum@loremipsum.org</a>
+                        </div>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <div class="center">
+                            Copyright&copy;2017.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</footer>
+
+
+</html>

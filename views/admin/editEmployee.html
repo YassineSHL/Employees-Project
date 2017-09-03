@@ -1,0 +1,43 @@
+<div class="content mrgn">
+    <!--TO DELETE IF NOT NEEDED-->
+    <div class="center">
+        <h1 class="page_title">Edit Employee</h1>
+    </div>
+    <div class="row mr">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-1">
+            <form ng-submit="saveNewEntry()" method="POST" class="center" ng-hide="signedup">
+                <div class="input-group input-group-lg fullwidth mrg ">
+                    <input type="text" class="form-control" placeholder="{{employee.firstName}}" ng-model="employee.firstName" min="3" max="15" disabled="true" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.lastname}}" ng-model="employee.lastname" min="3" max="15" disabled="true" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="email" class="form-control" placeholder="{{employee.email}}" ng-model="employee.email" min="5" max="30" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.phoneNumber}}" ng-model="employee.phoneNumber" min="12" max="13" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.address}}" ng-model="employee.address" min="10" max="40" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.city}}" ng-model="employee.city" min="3" max="15" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.insuranceNumber}}" ng-model="employee.insuranceNumber" size="10" maxlength="10" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="date" class="form-control" placeholder="{{employee.insuranceExpiryDate}}" ng-model="employee.insuranceExpiryDate" size="10" maxlength="10" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.profession}}" ng-model="employee.profession" min="4" max="15" required></input>
+                </div>
+                <div class="input-group input-group-lg fullwidth small_mrgn">
+                    <input type="text" class="form-control" placeholder="{{employee.company}}" ng-model="employee.company" min="4" max="15" required></input>
+                </div>
+                <button type="submit" class="btn btn-info btn-lg halfwidth btm">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>

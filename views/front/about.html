@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <h1 class="center page_title">About</h1>
+        <div class="container mrgn">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim neque faucibus blandit facilisis. Donec sed elit hendrerit, iaculis ex id, hendrerit ipsum. Duis sed maximus elit, a viverra sapien. Quisque sed arcu quam. Phasellus ac viverra eros. Pellentesque efficitur auctor condimentum. Fusce mattis, nulla vitae sodales lacinia, justo nulla gravida felis, quis luctus justo nisi ut ligula. Fusce commodo dolor non erat accumsan, nec egestas est commodo.
+            </p>
+            <p>
+                Duis non sem eros. In cursus tempor mollis. Mauris sollicitudin, nisl quis convallis hendrerit, urna ipsum scelerisque urna, eu condimentum quam arcu et lacus. Vestibulum efficitur nisi ut ex eleifend, sed malesuada neque iaculis. Phasellus et sollicitudin ex. In at purus aliquam mi lobortis viverra vel id magna. Nam lacus ipsum, semper ut interdum tincidunt, placerat ut ligula. Nunc mollis luctus scelerisque. Nam tincidunt lacinia arcu nec feugiat. Praesent sed dapibus urna, sit amet eleifend libero. Suspendisse pharetra interdum nunc. Donec auctor ligula euismod maximus bibendum. Ut aliquam vel erat dictum eleifend. Etiam ultricies turpis molestie nunc molestie, sed maximus elit ultricies. Quisque sit amet justo et neque pharetra tempor nec sit amet lectus.
+            </p>
+            <p>
+                Vivamus ac posuere ligula. Ut et ligula eros. Proin elit dui, aliquam ut enim ac, imperdiet elementum libero. Curabitur ut tortor congue, consequat sem eu, sollicitudin purus. In consectetur metus semper justo viverra tristique. Cras non hendrerit quam. Sed vehicula ex sit amet sagittis vehicula. Donec consequat, lectus id venenatis rutrum, tellus augue ullamcorper elit, nec maximus leo sapien sed odio. Donec auctor facilisis enim. Duis sed nisi vulputate dolor posuere efficitur a eget lacus. Cras blandit scelerisque pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin suscipit at nisi vel feugiat. Praesent euismod nulla ac faucibus ultrices.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada auctor dignissim. In et nibh tempor lectus consectetur lobortis. Vestibulum dapibus tortor a ipsum ultricies vulputate sed et massa. Vestibulum eu dui gravida, rhoncus justo quis, vestibulum nibh. Nulla semper urna in purus egestas, in viverra eros gravida. Proin hendrerit tempor ante in suscipit. Aliquam dictum porttitor felis, et bibendum eros efficitur vel. Vestibulum auctor nisl quis malesuada egestas.
+            </p>
+        </div>
+        <div class="container mrgn">
+            <h3>FAQ:</h3>
+            <div ng-repeat="x in faq">
+                <div ng-click="showAnswer(x.id)" class="faq faq_question">{{x.question}}
+                    <div ng-show="answer[x.id]==true" class="faq faq_answer">{{x.answer}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

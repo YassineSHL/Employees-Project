@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <h1 class="center page_title">Home</h1>
+        <div class="container mrgn">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim neque faucibus blandit facilisis. Donec sed elit hendrerit, iaculis ex id, hendrerit ipsum. Duis sed maximus elit, a viverra sapien. Quisque sed arcu quam. Phasellus ac viverra eros. Pellentesque efficitur auctor condimentum. Fusce mattis, nulla vitae sodales lacinia, justo nulla gravida felis, quis luctus justo nisi ut ligula. Fusce commodo dolor non erat accumsan, nec egestas est commodo. 101
+            </p>
+        </div>
+    </div>
+    <div class="w1_wrapper_profiles">
+        <div class="w1_profile_box" ng-repeat="employee in employees">
+            <div class="w1_profile_img" style="background-image:url('images/users/{{employee.image}}')"></div>
+            <div class="ptitlewrapper">
+                <h3>{{employee.firstName}} {{employee.lastName}}</h3>
+            </div>
+            <div class="pdescwrapper">
+                <span>{{employee.profession}} in {{employee.company}}</span>
+            </div>
+            <div ng-click="showCredentials(lg, employee)" class="w1_view readmore">Jetzt ansehen</div>
+        </div>
+            <br style="clear: both;" />
+
+    </div>
+    <br style="clear: both;" />
+</div>

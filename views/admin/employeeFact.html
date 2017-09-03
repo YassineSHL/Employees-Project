@@ -1,0 +1,36 @@
+<div>
+    <div class="center">
+        <h1 class="page_title">Employees factory</h1>
+        <h6 class="less_mrg_top">To add a new employee <a ui-sref="public.addEmployee">Click here</a>.
+            </h6>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="center">Employees names</th>
+                        <th class="center">
+                            Credentials
+                        </th>
+                        <th class="center">
+                            Edit / Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in employees track by $index">
+                        <td>{{x.firstName}} {{x.lastName}}</td>
+                        <td class="center">
+                            <button class="btn btn-info btn-sm" ng-click="showCredentials(lg, x)" >Show credetials</button>
+                        </td>
+                        <td>
+                            <button ng-click="deleteEntry(x)" class="btn btn-danger btn-sm pull-right">Delete</button>
+                            <button ng-click="editEntry(x)" class="btn btn-success btn-sm pull-right">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

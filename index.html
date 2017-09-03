@@ -1,0 +1,141 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <base href="/Employees-Project/">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--library-->
+    <script src="js/library/angular.min.js"></script>
+    <script src="js/library/1.5.0_angular-route.js"></script>
+    <script src="js/library/1.5.0_angular-animate.js"></script>
+    <script src="js/library/1.0.0_angular-ui-router.min.js"></script>
+    <script src="js/library/ui-bootstrap-tpls-1.1.2.js"></script>
+    <script src="js/library/angular-modal-service.js"></script>
+    <script src="js/library/angular-messages.min.js"></script>
+    <script src="js/library/underscore-min.js"></script>
+    <!--APP LOAD-->
+    <script src="js/app.js"></script>
+    <!--SERVICES-->
+    <script src="js/services/localStorage.service.js"></script>
+    <!--CONTROLLERS-->
+    <script src="js/controllers/login.controller.js"></script>
+</head>
+
+<body ng-controller="loginCtrl" class="logBack">
+<div class="content">
+    <div class="center">
+        <h1 class="boxed_item_main">Lorem <span class="logo_bold">Ipsum</span></h1>
+    </div>
+    <div ng-if="login" class="logBack1">
+        <div class="center">
+            <h1 class="page_title_main">Log In</h1>
+            <h6 class="mr">
+                Don't have an account yet ? <a ng-click="showToggle()">Register Here</a>
+                </h6>
+            <!-- <span>Create your account</br>
+            Already have one? <a href="#">Log in</a>.
+            </span> -->
+        </div>
+        <div class="row mr" style="margin-bottom: 170px;">
+            <div>
+                <form ng-submit="loginUser(user)" method="POST" class="center">
+                    <div class="fullwidth small_mrgn">
+                        <input type="email" class="inputX" placeholder="E-mail" ng-model="user.email">
+                    </div>
+                    <div class="fullwidth small_mrgn">
+                        <input type="password" class="inputX" placeholder="Password" ng-model="user.password">
+                        <!-- style="border-radius: 10px;" -->
+                    </div>
+                    <button type="submit" class="btn btn-prot btn-info halfwidth">Log in</button>
+                    <br/>
+                    <br style="clear: both;" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!login" class="logBack1">
+        <!--TO DELETE IF NOT NEEDED-->
+        <div class="center">
+            <h1 class="page_title">Sign Up</h1>
+            <h6 class="mr">Create your account</br>
+            Already have one? <a ng-click="showToggle()">Log in</a>.
+            <br/>
+            <h4>NOT IMPLEMENTED YET.</h4>
+            </h6>
+        </div>
+        <div class="row mr">
+            <div>
+                <form ng-submit="signup()" method="POST" class="center" ng-hide="signedup">
+                    <div class="fullwidth small_mrgn">
+                        <input type="text" class="inputX" placeholder="First name" ng-model="user.username.firstname"></input>
+                    </div>
+                    <div class="fullwidth small_mrgn">
+                        <input type="text" class="inputX" placeholder="Last name" ng-model="user.username.lastname"></input>
+                    </div>
+                    <div class="fullwidth small_mrgn">
+                        <input type="email" class="inputX" placeholder="E-mail" ng-model="user.email"></input>
+                    </div>
+                    <div class="fullwidth small_mrgn">
+                        <input type="password" class="inputX" placeholder="Password" ng-model="user.password"></input>
+                    </div>
+                    <div class="fullwidth small_mrgn">
+                        <input type="password" class="inputX" placeholder="Confirm Password" ng-model="user.cpassword"></input>
+                    </div>
+                    <button type="submit" class="btn btn-prot btn-info halfwidth">Register</button>
+                    <br/>
+                    <br style="clear: both;" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <br style="clear: both;" />
+    </div>
+</body>
+<footer>
+    <div class="container_dark_grey footer">
+        <table>
+            <thead>
+                <tr>
+                    <td style="width: 40%" class="center">
+                        <div><a href="#">Contact Us</a></div>
+                        <div><a href="#">Search Stores</a></div>
+                        <div><a href="#">Q&#38;As</a></div>
+                        <div><a href="#">Help</a></div>
+                    </td>
+                    <td style="width: 20%" class="center">
+                        <a href="#">
+                            <h1 class="boxed_item">Lorem <span class="logo_bold">Ipsum</span></h1>
+                        </a>
+                    </td>
+                    <td style="width: 40%; padding-left: 10%;">
+                        <div>
+                            <a href="https://www.facebook.com/" class="footer_space"><img src="images/icons/Facebook20.png" title="Facebook"> : facebook.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="#" class="footer_space"><img src="images/icons/Twitter20.png" title="Twitter"> : twitter.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="https://www.facebook.com/" class="footer_space"><img src="images/icons/LinkedIn20.png" title="Facebook"> : LinkedIn.com/lorem.ipsum</a>
+                        </div>
+                        <div>
+                            <a href="#" class="footer_space"><img src="images/icons/Mail20.png" title="Gmail"> : lorem.ipsum@loremipsum.org</a>
+                        </div>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <div class="center">
+                            Copyright&copy;2017.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</footer>
+
+</html>
